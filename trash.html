@@ -1,0 +1,77 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+  </head>
+  <body>
+      <div id="time-left"></div>
+    <div id="currentQA">
+
+    </div>
+
+
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+    //  Simple Timer Solution
+
+// Step 1:
+// Use the following Audio file below:
+var audio = new Audio("raven.mp3");
+
+//  Step 2:
+//  after 5 seconds, execute the fiveSeconds function
+//  after 10 seconds, execute the tenSeconds function
+//  after 15 seconds, execute the timeUp function
+
+setTimeout(renderQA, 1000 * 5);
+setTimeout(tenSeconds, 1000 * 10);
+setTimeout(timeUp, 1000 * 15);
+
+//  Step 3:
+//  Fill in the blanks to these functions.
+var currentQuestion = "Why is the sky blue?"
+
+var currentQ = ["Why is this so hard?", "Why am I so tired?", "Why is the sky dark?", "Why is it so hot?"]
+function renderQA() {
+$("#currentQA").append(currentQuestion)}
+
+
+function fiveSeconds() {
+  // in the element with an id of time-left add an h2 saying About 10 Seconds Left!
+  // console log 10 seconds left
+  $("#time-left").append("<h2>About 10 Seconds Left!</h2>");
+  console.log("10 seconds left");
+}
+
+function tenSeconds() {
+  // in the element with an id of time-left add an h2 saying About 5 Seconds Left!
+  // console log 5 seconds left
+  $("#time-left").append("<h2>About 5 Seconds Left!</h2>");
+  console.log("5 seconds left");
+}
+
+function timeUp() {
+  // in the element with an id of time-left add an h2 saying Time's Up!
+  // console log done
+  console.log("done");
+  $("#time-left").append("<h2>Time's Up!</h2>");
+  console.log("time is up");
+
+  //  The following line will play the audio file we linked to above:
+  audio.play();
+}
+
+    
+    
+    </script>
+    
+  </body>
+  </html>
+  
+  
+  
+  

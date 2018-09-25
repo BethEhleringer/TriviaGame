@@ -1,0 +1,84 @@
+<!-- Students: Our work lies in the slideshow.js file. -->
+
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <title>Slideshow</title>
+
+    <style>
+
+      body { /* Visual */ background: lightgrey;}
+
+      #image-holder, #question-holder {
+
+        /* Positioning */
+         margin: 0 auto;
+
+        /* Box-model */
+        width: 400px;
+
+        /* Typography */
+        text-align: center;
+
+      }
+
+      #buttons {
+
+        /* Positioning */
+        margin: 50px 0;
+
+        /* Typography */
+        text-align: center;
+
+      }
+
+      button {
+
+        /* Box-model */
+        width: 200px;
+        height: 100px;
+
+      }
+
+    </style>
+
+  </head>
+
+  <body>
+
+    <div id="buttons">
+      <button id="start"><h2>Start</h2></button>
+      <button id="stop"><h2>Stop</h2></button>
+    </div>
+
+    <div id="image-holder"></div>
+    <h2>You picked <span id="user-choice"></span></h2>
+    <button id="submit-answer"></button>
+    <!--<form id="question-holder">
+                <input type="radio" name="answer" id="current-answer-a" value="a"><br>
+                <input type="radio" name="answer" id="current-answer-b" value="b"><br>
+                <input type="radio" name="answer" id="current-answer-c" value="c"><br>
+                <input type="radio" name="answer" id="current-answer-d" value="d">
+                
+            </form>
+ 
+            <div id="display-current-answer-options"></div>
+        </div>
+    </form>-->
+
+    <!-- jQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+    <!--<script type="text/javascript" src="assets/javascript/jquery-3.3.1.min.js"></script>-->
+
+
+    <!-- Script -->
+    <script type="text/javascript" src="assets/javascript/quiz.js"></script>
+
+  </body>
+
+</html>
+
