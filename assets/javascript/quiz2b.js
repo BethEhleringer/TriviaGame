@@ -62,10 +62,8 @@ $(document).ready(function () {
 
     var userChoice
     var userAnswers = []
+    
 
-    function showPicture() {
-        $("#current-image").html("<img src= " + questionArray[count].image + ">")
-    }
 
     function nextImage() {
         //  TODO: Increment the count by 1.
@@ -74,14 +72,14 @@ $(document).ready(function () {
         // TODO: Use a setTimeout to run displayQA after 1/10 second.
         setTimeout(displayQA, 100);
         // TODO: If the count is the same as the length of the image array, reset the count to 0.
-        if (count === questionArray.length) {
+        if (count === images.length) {
             count = 0;
         }
     }
 
     function checkItem() {
-        
-        if (userChoice === questionArray[count].correctAnswer) {
+        userAnswers.push(userChoice);
+        if (userChoice === questionArray[i].correctAnswer) {
             //tell them they got it right
             $("#right-or-wrong").html("<h3>Correct!</h3>")
             //Add to correctAnswers
@@ -95,7 +93,7 @@ $(document).ready(function () {
             wrongAnswers++
             $("#wrong-answers").text(wrongAnswers)
         }
-        userAnswers.push(userChoice);
+
         //add current image
         $("#current-image").html("<img src= " + questionArray[count].image + ">")
         //next question
@@ -104,88 +102,61 @@ $(document).ready(function () {
 
     }
 
-    //Shows current question and answers.
-    function displayQA() {
+//Shows current question and answers.
+function displayQA() {
         $("#image-holder").html("<h3>" + questionArray[count].question + "</h3>" +
             "<form>" + "<input type='radio' name='answer' id='current-answer-a'  value='a'>" + questionArray[count].answers.a + "<br>" +
             "<input type='radio' name='answer' id='current-answer-b'  value='b'>" + questionArray[count].answers.b + "<br>" +
             "<input type='radio' name='answer' id='current-answer-c'  value='c'>" + questionArray[count].answers.c + "<br>" +
-            "<input type='radio' name='answer' id='current-answer-d'  value='d'>" + questionArray[count].answers.d + "<br>" +
+            "<input type='radio' name='answer' id='current-answer-d'  value='d'>" + questionArray[count].answers.d + "<br>"
             "<button id='submit-button'>Submit Answer</button>" +
             "</form>" + "<span id='current-image'>" + "</span>")
-            //checking
-            console.log(questionArray[count].correctAnswer);
         //event listener - record user's choice
+        /* $("#current-answer-a").on("click", function () {
+             var userChoice = "a"
+             $("#user-choice").text(userChoice)
+             console.log(userChoice)
+             //store choice to array
+             userAnswers.push(userChoice)
+             console.log("Testing to see if array shows up", userAnswers)
+             //add current image
+             $("#current-image").html("<img src= " + questionArray[count].image + ">")
+             //next question
+             nextImage();
+         })*/
         $("#current-answer-a").on("click", function () {
             var userChoice = "a"
             $("#user-choice").text(userChoice)
             console.log(userChoice)
-            //store choice to array
-            userAnswers.push(userChoice)
-            console.log("Testing to see if array shows up", userAnswers)
-            //add current image
-            checkItem();
-            $("#current-image").html("<img src= " + questionArray[count].image + ">")
-            //next question
-            setTimeout(nextImage, 1000);
         })
-
         $("#current-answer-b").on("click", function () {
             var userChoice = "b"
             $("#user-choice").text(userChoice)
             console.log(userChoice)
-            //store choice to array
-            userAnswers.push(userChoice)
-            console.log("Testing to see if array shows up", userAnswers)
-            //add current image
-            checkItem();
-
-            $("#current-image").html("<img src= " + questionArray[count].image + ">")
-            //next question
-            setTimeout(nextImage, 1000);
         })
         $("#current-answer-c").on("click", function () {
             var userChoice = "c"
             $("#user-choice").text(userChoice)
             console.log(userChoice)
-            //store choice to array
-            userAnswers.push(userChoice)
-            console.log("Testing to see if array shows up", userAnswers)
-            //add current image
-            checkItem();
-
-            $("#current-image").html("<img src= " + questionArray[count].image + ">")
-            //next question
-            setTimeout(nextImage, 1000);
         })
         $("#current-answer-d").on("click", function () {
             var userChoice = "d"
             $("#user-choice").text(userChoice)
             console.log(userChoice)
-            //store choice to array
-            userAnswers.push(userChoice)
-            console.log("Testing to see if array shows up", userAnswers)
-
-            checkItem();
-
-            //add current image
-            $("#current-image").html("<img src= " + questionArray[count].image + ">")
-            //next question
-            setTimeout(nextImage, 1000);
         })
-        /*$("#submitAnswer").on("click", function () {
+        $("#submitAnswer").on("click", function () {
             var currentUserAnswer = userChoice;
             console.log(userAnswers)
             //userAnswers.push(currentUserAnswer)
             console.log(userAnswers)
         }
 
-        )*/
+        )
         //userAnswers.push(userChoice)
-
+        console.log("LMNOPQRST")
         console.log(userAnswers[0])
         console.log(userAnswers)
-
+        console.log("testing123")
 
         $("#submit-button").click(checkItem)
         console.log(userChoice)
@@ -194,7 +165,7 @@ $(document).ready(function () {
 
 
 
-    function startQuiz() {
+function startQuiz() {
 
         // TODO: Use showImage to hold the setInterval to run nextImage.
         showImage = setInterval(nextImage, 15000);
@@ -202,7 +173,7 @@ $(document).ready(function () {
 
     }
 
-    function stopQuiz() {
+function stopQuiz() {
 
         // TODO: Put our clearInterval here:
         clearInterval(showImage);
@@ -211,6 +182,6 @@ $(document).ready(function () {
 
 
 
-    // This will run the display image function as soon as the page loads.
-    displayQA();
+// This will run the display image function as soon as the page loads.
+displayQA();
 });

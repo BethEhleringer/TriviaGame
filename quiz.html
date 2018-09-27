@@ -7,11 +7,11 @@
   <head>
 
     <meta charset="UTF-8">
-    <title>Slideshow</title>
+    <title>Volusia County Fair Quiz</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
     crossorigin="anonymous">
   <link rel="stylesheet" href="assets/css/style.css">
-
+  <link href="https://fonts.googleapis.com/css?family=Rancho" rel="stylesheet">
     <style>
 
       body {
@@ -19,8 +19,26 @@
         
       }
 
+      h1, h2, h3, h4, h5, h6, p, form {
+        font-family: 'Rancho', cursive;
+      }
+
+      h1, h2 {
+          font-size: 36pt;
+          margin:0px auto;
+      }
+
+      form {
+          font-size: 14pt;
+      }
+
+     /*p {
+          font-family:Arial, Helvetica, sans-serif;
+      }*/
+
       container {
-        background-color:blanchedalmond;
+        background-color:#f00;
+        margin: 10px auto;
       }
 
       #image-holder, #question-holder {
@@ -60,17 +78,32 @@
   </head>
 
   <body>
+      
     <div class="container">
+            <div class="row">
+                    <div class="col-lg-2 col-md-2 col-sm-1 col-xs-1"></div>
+                    <div class="col-md-8 col-lg-8 col-xs-10" style="background-image:none; background-color:#FFF;">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12"><img src="assets/images/fairLogo.jpg" style="width:150px; height:auto;" ></div>
+                            <div class="col-lg-9 col-md-9 col-sm-6 col-xs-12"> <h1 style="text-align:center;">Do you know the Volusia County Fair?</h1></div>
+                        </div>
+                       </div>
+                    <div class="col-lg-2 col-md-2 col-sm-1 col-xs-1"></div>
+                </div>  
       <div class="row">
         <div class="col-lg-2 col-md-2 col-sm-1 col-xs-1"></div>
         <div class="col-md-8 col-lg-8 col-xs-10" style="background-image:none; background-color:#FFF;">
     <div id="buttons">
-      <button id="start"><h2>Start</h2></button>
-      <button id="stop"><h2>Stop</h2></button>
+      <button id="start"><h2>Start Quiz</h2></button>
+      
     </div>
+    <h5>Correct Answers: <span id="correct-answers"></span></h5>
+    <h5>Wrong Answers: <span id="wrong-answers"></span></h5>
 
     <div id="image-holder"></div>
     <h2>You picked <span id="user-choice"></span></h2>
+    <div id="right-or-wrong"></div>
+    <img id="current-image">
     <button id="submit-answer"></button>
 </div>
 <div class="col-lg-2 col-md-2 col-sm-1 col-xs-1"></div>
@@ -81,7 +114,7 @@
 
 
     <!-- Script -->
-    <script type="text/javascript" src="assets/javascript/quiz.js"></script>
+    <script type="text/javascript" src="assets/javascript/quiz2.js"></script>
 
   </body>
 
